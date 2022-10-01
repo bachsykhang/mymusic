@@ -49,6 +49,30 @@ const musicList = [
         name: "Bạch nguyệt quang và nốt chu sa",
         linkMusic: "./assets/music/Bạch Nguyệt Quang Và Nốt Chu Sa.mp3",
         img: "./assets/img/bachnguyetquangvanotchusa.jpg"
+    },
+    {
+        id: 6,
+        name: "Mặt mộc",
+        linkMusic: "./assets/music/mặt mộc.mp3",
+        img: "./assets/img/matmoc.jpg"
+    },
+    {
+        id: 7,
+        name: "Người em cố đô",
+        linkMusic: "./assets/music/người em cố đô.mp3",
+        img: "./assets/img/người em cố đô.jfif"
+    },
+    {
+        id: 8,
+        name: "Em là nhất miền tây",
+        linkMusic: "./assets/music/em là nhất miền tây.mp3",
+        img: "./assets/img/em là nhất miền tay.jfif"
+    },
+    {
+        id: 9,
+        name: "Kiệu hoa",
+        linkMusic: "./assets/music/kiệu hoa.mp3",
+        img: "./assets/img/kiệu hoa.jpeg"
     }
 
 ];
@@ -112,7 +136,7 @@ function renderList() {
     const htmls = musicList.map((nhac, index) => {
         return `
                 <div class="cacBH ${index === indexSong ? "active-list" : ''}" data-index="${nhac.id}">
-                    <img src="${nhac.img}" alt="">
+                    <img class="${index === indexSong ? "music-img-an" : ''}" src="${nhac.img}" alt="">
                     <div class="moTa">
                         <p class="tennhac-list">${nhac.name}</p>
                     </div>
@@ -172,15 +196,41 @@ backBtn.addEventListener("click", function() {
 function scrollActiveList() {
     if (indexSong == 0) {
         setTimeout(() => {
-            document.querySelector(".cacBH.active-list").scrollIntoView(true);
+            document.querySelector(".cacBH.active-list").scrollIntoView({
+                behavior: "smooth",
+                block: "end"
+            })
+            
         }, 200);
     } else if (indexSong == musicList.length-1) {
         setTimeout(() => {
-            document.querySelector(".cacBH.active-list").scrollIntoView(false);
-        }, 200)
+            document.querySelector(".cacBH.active-list").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            })
+        }, 200);
+    } else {
+        setTimeout(() => {
+            document.querySelector(".cacBH.active-list").scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            })
+        }, 200);
     }
 }
 
+// chức năng click bài hát active
+playList.addEventListener("click", clickAT);
+function clickAT(playList) {
+    const playList1 = playList.target.closest('.cacBH:not(.active-list)');
+    if (playList1) {
+        indexSong = Number(playList1.dataset.index - 1);
+        isPlaying = true;
+        init(indexSong);
+        playPause();
+        renderList();
+    }
+}
 
 // render lại data
 function init(indexSong) {

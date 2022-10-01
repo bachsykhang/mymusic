@@ -28,6 +28,7 @@ body {
   box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
   padding: 44px 15px 44px;
   border-radius: 12px;
+  border: 1px solid;
 }
 
 .music-name {
@@ -135,6 +136,7 @@ body {
   border-radius: 100%;
   object-fit: cover;
   margin: 10px 10px;
+  border: 1px solid white;
 }
 
 .cacBH {
@@ -145,6 +147,10 @@ body {
   margin: 14px;
   border-radius: 12px;
 } 
+
+.cacBH:hover {
+  cursor: pointer;
+}
 
 .moTa {
   background: linear-gradient(to right, #da00ff, #fda300);
@@ -175,6 +181,9 @@ body {
       transform: rotate(360deg);
   }
 }
+
+/* viền màu */
+
 
 /* responsive */
 @media screen and (max-width: 800px) {
