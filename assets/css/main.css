@@ -85,8 +85,9 @@ body {
   height: 40px;
   width: 40px;
   position: relative;
-  background-color: #b2b2c1;
+  background-color: #00b0ff;
   border-radius: 100%;
+  border: 1px solid;
 }
 
 .play-inner:hover {
@@ -181,6 +182,7 @@ body {
   .container {
     flex-direction: column;
     padding: 0;
+    height: 96vh;
   }
 
   .mobile {
@@ -197,7 +199,7 @@ body {
 
   .cacBaiHat {
     margin-top: 10px;
-    max-height: 72%;
+    height: 276px;
   }
 
   .controls {
