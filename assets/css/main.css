@@ -197,6 +197,7 @@ body {
 
   .cacBaiHat {
     margin-top: 10px;
+    max-height: 72%;
   }
 
   .controls {
