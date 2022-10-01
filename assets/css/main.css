@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  height: 100vh;
+  background-color: #ddecec;background: linear-gradient(to right, #13dbf4, #d06187);
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.music {
+  width: 480px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #4df403ab;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  padding: 44px 15px 44px;
+  border-radius: 12px;
+}
+
+.music-name {
+  font-size: 18px;
+  font-weight: 550;
+  color: black;
+  text-align: center;
+}
+
+.music-img {
+  height: 80px;
+  width: 80px;
+  margin: 16px 0;
+}
+
+.music-img-an {
+  animation: spinner 5s infinite linear;
+}
+
+.music-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px rgb(255, 255, 255), 0 0 0 6px #fd1900;
+}
+
+#range {
+  width: 88%;
+}
+
+.timer {
+  width: 78%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  font-size: 14px;
+  color: red;
+  margin-bottom: 30px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0 50px;
+  font-size: 21px;
+}
+
+.play {
+  position: relative;
+  text-align: center;
+}
+
+.play-inner {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  background-color: #b2b2c1;
+  border-radius: 100%;
+}
+
+.play-inner:hover {
+  cursor: pointer;
+}
+
+.play-inner .fa-play {
+  top: 26%;
+  position: absolute;
+  left: 35%;
+}
+
+.play-inner .fa-pause {
+  top: 26%;
+  position: absolute;
+  left: 35%;
+}
+
+.play-back:hover , .play-next:hover {
+  cursor: pointer;
+}
+
+/* -- Thành phần các bài hát -- */
+
+.listM {
+  width: 40%;
+  height: 361px;
+}
+
+.cacBaiHat {
+  width: 100%;
+  /* height: 361px; */
+  margin: 0 auto;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  overflow: auto;
+  background-color: #84cef0;
+  box-shadow: rgb(100 100 111 / 60%) 0px 7px 29px 0px;
+  height: 361px;
+}
+
+.cacBaiHat img {
+  height: 55px;
+  width: 55px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin: 10px 10px;
+}
+
+.cacBH {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  background-color: black;
+  margin: 14px;
+  border-radius: 12px;
+} 
+
+.moTa {
+  background: linear-gradient(to right, #da00ff, #fda300);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.moTa p {
+  margin: 0;
+}
+
+.tennhac-list {
+  font-size: 20px;
+}
+
+.active-list {
+  background: linear-gradient(to right, #da00ff, #fda300);
+  color: transparent;
+}
+
+.active-list p {
+  color: white;
+}
+
+/* --- Đĩa Xoay --- */
+@keyframes spinner {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* responsive */
+@media screen and (max-width: 800px) {
+
+  .container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .mobile {
+    margin: 0 auto;
+  }
+
+  #range {
+    max-width: 70%;
+  }
+
+  .music {
+    max-width: 280px;
+  }
+
+  .cacBaiHat {
+    margin-top: 10px;
+  }
+
+  .controls {
+    font-size: 18px;
+  }
+}
