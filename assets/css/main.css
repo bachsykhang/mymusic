@@ -157,7 +157,7 @@ body {
 }
 
 .tennhac-list {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .active-list {
@@ -199,10 +199,19 @@ body {
 
   .cacBaiHat {
     margin-top: 10px;
-    height: 276px;
+    height: 234px;
   }
 
   .controls {
     font-size: 18px;
   }
+
+  .tennhac-list {
+    font-size: 14px;
+  }
+
+  .cacBaiHat img {
+    height: 40px;
+    width: 40px;
+}
 }
