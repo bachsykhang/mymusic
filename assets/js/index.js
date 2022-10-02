@@ -17,6 +17,8 @@ const playList = document.querySelector(".cacBaiHat");
 // nút chuyển bài,quay lại bài
 const backBtn = document.querySelector(".play-back");
 const nextBtn = document.querySelector(".play-next");
+// nút sun,moon
+const dark = document.querySelector(".mode-on-off");
 
 // Danh sách bài hát
 const musicList = [
@@ -73,6 +75,30 @@ const musicList = [
         name: "Kiệu hoa",
         linkMusic: "./assets/music/kiệu hoa.mp3",
         img: "./assets/img/kiệu hoa.jpeg"
+    },
+    {
+        id: 10,
+        name: "Nơi này có anh",
+        linkMusic: "./assets/music/nơi này có anh.mp3",
+        img: "./assets/img/noinaycoanh.jpg"
+    },
+    {
+        id: 11,
+        name: "Nhất thân",
+        linkMusic: "./assets/music/nhất thân.mp3",
+        img: "./assets/img/nhatthan.jfif"
+    },
+    {
+        id: 12,
+        name: "Chạnh lòng thương cô",
+        linkMusic: "./assets/music/chạnh lòng thương cô.mp3",
+        img: "./assets/img/chanhlongthuongco.jpg"
+    },
+    {
+        id: 13,
+        name: "Khóc cho người ai khóc cho anh",
+        linkMusic: "./assets/music/khóc cho người ai khóc cho anh.mp3",
+        img: "./assets/img/aikhocchoanh.jpg"
     }
 
 ];
@@ -95,13 +121,14 @@ function playPause() {
         timer = setInterval(displayTimer, 600);
         musicImgSP.classList.add("music-img-an");
         isPlaying = false;
-
+        getSpinner();
     }else {
         song.pause();
         playBtn.innerHTML = "<i class='fa-solid fa-play'></i>";
         clearInterval(timer);
         musicImgSP.classList.remove("music-img-an");
         isPlaying = true;
+        stopSpinner();
     }
 }
 
@@ -136,7 +163,7 @@ function renderList() {
     const htmls = musicList.map((nhac, index) => {
         return `
                 <div class="cacBH ${index === indexSong ? "active-list" : ''}" data-index="${nhac.id}">
-                    <img class="${index === indexSong ? "music-img-an" : ''}" src="${nhac.img}" alt="">
+                    <img class="" src="${nhac.img}" alt="">
                     <div class="moTa">
                         <p class="tennhac-list">${nhac.name}</p>
                     </div>
@@ -229,6 +256,7 @@ function clickAT(playList) {
         init(indexSong);
         playPause();
         renderList();
+        getSpinner();
     }
 }
 
@@ -243,4 +271,36 @@ function init(indexSong) {
 }
 init(indexSong);
 
+// chức năng đĩa xoay danh sách bài hát
+// star đĩa
+function getSpinner() {
+    document.querySelector(".active-list img").classList.add("music-img-an");
+}
+// stop đĩa
+function stopSpinner() {
+    document.querySelector(".active-list img").classList.remove("music-img-an");
+}
 
+// chức năng bật, tắt màu nền
+dark.addEventListener("click",clickMode);
+function clickMode() {
+    if(isPlaying){
+        dark.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        setDark();
+        isPlaying = false;
+    }else {
+        dark.innerHTML = '<i class="fa-regular fa-sun"></i>';
+        setLight();
+        isPlaying = true;
+    } 
+}
+
+function setDark(){
+    document.querySelector("body").style.backgroundColor = "black";
+    document.querySelector(".music").style.backgroundColor = "#6781b2";
+}
+
+function setLight() {
+    document.querySelector("body").style.backgroundColor = "#c4ecec";
+    document.querySelector(".music").style.backgroundColor = "#cbff8e";
+}

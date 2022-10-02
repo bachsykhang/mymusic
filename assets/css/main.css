@@ -9,7 +9,8 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 20px;
   height: 100vh;
-  background-color: #ddecec;background: linear-gradient(to right, #13dbf4, #d06187);
+  /* background-color: #ddecec;background: linear-gradient(to right, #13dbf4, #d06187); */
+  background-color: #c4ecec;
 }
 
 .container {
@@ -24,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #4df403ab;
+  background-color: #cbff8e;
   box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
   padding: 44px 15px 44px;
   border-radius: 12px;
@@ -167,7 +168,7 @@ body {
 }
 
 .active-list {
-  background: linear-gradient(to right, #da00ff, #fda300);
+  background: linear-gradient(to right,  #df5843, #97d94b);
   color: transparent;
 }
 
@@ -182,7 +183,14 @@ body {
   }
 }
 
-/* viền màu */
+/* hiệu ứng sáng , tối */
+.fa-sun,.fa-moon{
+  font-size: 26px;
+}
+
+.fa-sun:hover,.fa-moon:hover {
+  cursor: pointer;
+}
 
 
 /* responsive */
