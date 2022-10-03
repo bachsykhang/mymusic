@@ -48,7 +48,7 @@ body {
 }
 
 .music-img-an {
-  animation: spinner 5s infinite linear;
+  animation: spinner 10s infinite linear;
 }
 
 .music-img img {
