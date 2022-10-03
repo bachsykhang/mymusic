@@ -25,11 +25,13 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #cbff8e;
+  /* background-color: #cbff8e; */
   box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
   padding: 44px 15px 44px;
   border-radius: 12px;
   border: 1px solid;
+  position: relative;
+  overflow: hidden;
 }
 
 .music-name {
@@ -184,14 +186,26 @@ body {
 }
 
 /* hiệu ứng sáng , tối */
-.fa-sun,.fa-moon{
+.fa-moon {
   font-size: 26px;
+  color: white;
+}
+
+.fa-sun {
+  font-size: 26px;
+  color: black;
 }
 
 .fa-sun:hover,.fa-moon:hover {
   cursor: pointer;
 }
 
+/* video background */
+video {
+  position: absolute;
+  top: 0;
+  z-index: -1; 
+}
 
 /* responsive */
 @media screen and (max-width: 800px) {
