@@ -42,15 +42,15 @@ const musicList = [
     },
     {
         id: 4,
-        name: "Giấc mơ xưa và cây diệp anh đào",
-        linkMusic: "./assets/music/Giấc mơ xưa và cây diệp anh đào.mp3",
-        img: "./assets/img/anhdao.jpg"
+        name: "Anh thề đấy",
+        linkMusic: "./assets/music/anh thề đấy.mp3",
+        img: "./assets/img/anhtheday.jfif"
     },
     {
         id: 5,
-        name: "Bạch nguyệt quang và nốt chu sa",
-        linkMusic: "./assets/music/Bạch Nguyệt Quang Và Nốt Chu Sa.mp3",
-        img: "./assets/img/bachnguyetquangvanotchusa.jpg"
+        name: "Em là nhất",
+        linkMusic: "./assets/music/em là nhất.mp3",
+        img: "./assets/img/emlanhat.jfif"
     },
     {
         id: 6,

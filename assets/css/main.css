@@ -146,7 +146,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 22px;
-  background-color: black;
+  background-color: #fffafa;
   margin: 14px;
   border-radius: 12px;
 } 
@@ -170,7 +170,7 @@ body {
 }
 
 .active-list {
-  background: linear-gradient(to right,  #df5843, #97d94b);
+  background: linear-gradient(to right,  #2196f3, #00ff69);
   color: transparent;
 }
 
@@ -246,6 +246,7 @@ video {
 
   .tennhac-list {
     font-size: 14px;
+    font-weight: 550;
   }
 
   .cacBaiHat img {
