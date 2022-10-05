@@ -24,15 +24,15 @@ const dark = document.querySelector(".mode-on-off");
 const musicList = [
     {
         id: 1,
-        name: 'Nghìn cánh hoa đào',
-        linkMusic: './assets/music/nghìn cánh hoa đào.mp3',
-        img: './assets/img/nghincanhhoadao.jpg'
+        name: 'Yêu từ đâu mà ra',
+        linkMusic: './assets/music/yêu từ đâu mà ra.mp3',
+        img: './assets/img/yeutudaumara.jfif'
     },
     {
         id: 2,
-        name: 'Ánh trăng huyền ảo',
-        linkMusic: './assets/music/ánh trăng huyền ảo.mp3',
-        img: './assets/img/anhtranghuyenao.jpg'
+        name: 'Ngày em đến',
+        linkMusic: './assets/music/ngày em đến.mp3',
+        img: './assets/img/ngayemden.jfif'
     },
     {
         id: 3,
@@ -266,7 +266,6 @@ function init(indexSong) {
     song.setAttribute("src",musicList[indexSong].linkMusic);
     musicImg.setAttribute("src",musicList[indexSong].img);
     musicName.textContent = musicList[indexSong].name;
-
     renderList();
 }
 init(indexSong);
@@ -308,7 +307,8 @@ function setLight() {
     document.querySelector("body").style.backgroundColor = "rgb(196, 236, 236)";
     document.querySelector(".cacBaiHat").style.backgroundColor = "#84cef0";
     document.querySelector(".controls").style.color = "black";
-    document.querySelector("video").setAttribute("src","https://v16-webapp.tiktok.com/2e3528cfbce3568b5668af326ac57cc0/633afab4/video/tos/useast2a/tos-useast2a-pve-0037-aiso/c3535a7caada4b079cd0ac7267c3002d/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C1%7C0&cv=1&br=1480&bt=740&cs=0&ds=3&ft=z_piDPWT2NvjVwCzxozfuCYQFAe4nRQjl3_J2tOB&mime_type=video_mp4&qs=0&rc=NWY2N2g5OzpnPGZoNmVnO0BpM2w4dTw6Zjg3ZjMzZjgzM0AwYV5iMTRjNjYxMjRfMDE0YSNzaXE0cjRfb2JgLS1kL2Nzcw%3D%3D&l=2022100309060101024408707018F05C70&btag=80000");
+    document.querySelector("video").setAttribute("src","./assets/video/videonen.mp4");
     document.querySelector(".fa-sun").style.color = "black";
     document.querySelector(".music-name").style.color = "black";
 }
+

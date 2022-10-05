@@ -201,10 +201,17 @@ body {
 }
 
 /* video background */
-video {
+.video-dark {
   position: absolute;
-  top: 0;
+  bottom: -290px;
   z-index: -1; 
+}
+
+video {
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
 }
 
 /* responsive */
