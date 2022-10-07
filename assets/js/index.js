@@ -19,6 +19,10 @@ const backBtn = document.querySelector(".play-back");
 const nextBtn = document.querySelector(".play-next");
 // nút sun,moon
 const dark = document.querySelector(".mode-on-off");
+// lặp bài hát
+const repeatIcon = document.querySelector(".repeat-icon");
+// random bài hát
+const randomIcon = document.querySelector(".random-icon");
 
 // Danh sách bài hát
 const musicList = [
@@ -109,6 +113,7 @@ let timer;
 let isPlaying = true;
 let indexSong = 0;
 let isRandom = false;
+let isRepeat = false;
 
 // -------------------------------
 
@@ -118,7 +123,7 @@ function playPause() {
     if(isPlaying) {
         song.play();
         playBtn.innerHTML = "<i class='fa-solid fa-pause'></i>";
-        timer = setInterval(displayTimer, 600);
+        timer = setInterval(displayTimer, 500);
         musicImgSP.classList.add("music-img-an");
         isPlaying = false;
         getSpinner();
@@ -177,6 +182,17 @@ renderList();
 
 // hàm next back bài
 function changeSong(x) {
+    if (isRandom) {
+        ranDom();
+        isRandom = true;
+        isPlaying = true;
+        scrollActiveList();
+    }
+    else if(isRepeat) {
+        song.play();
+        isRepeat = true;
+        isPlaying = true;
+    }
     if(x === 1) {
         // next song
         indexSong++;
@@ -196,8 +212,21 @@ function changeSong(x) {
 
 song.addEventListener("ended", thayDoiBaiKetThuc);
 function thayDoiBaiKetThuc() {
-    changeSong(1);
-    isPlaying = true;
+    if (isRandom) {
+        ranDom();
+        isRandom = true;
+        isPlaying = true;
+        scrollActiveList();
+    }
+    else if(isRepeat) {
+        song.play();
+        isRepeat = true;
+        isPlaying = true;
+    }
+    else {
+        changeSong(1);
+        isPlaying = true;
+    }
     init(indexSong);
     playPause(); 
     scrollActiveList();   
@@ -310,5 +339,45 @@ function setLight() {
     document.querySelector("video").setAttribute("src","./assets/video/videonen.mp4");
     document.querySelector(".fa-sun").style.color = "black";
     document.querySelector(".music-name").style.color = "black";
+}
+
+// Chức năng repeat bài hát
+repeatIcon.addEventListener("click",clickRepeat);
+function clickRepeat() {
+    if (isRandom) {
+        randomIcon.classList.remove("active-icon");
+        isRandom = false;
+    }
+    if (isRepeat) {
+        repeatIcon.classList.remove("active-icon");
+        isRepeat = false;
+    }else {
+        repeatIcon.classList.add("active-icon");
+        isRepeat = true;
+    }
+}
+
+// Chức năng random bài hát
+function ranDom() {
+    do {
+        newIndex = Math.floor(Math.random() * musicList.length);
+    } while(newIndex === indexSong);
+    indexSong = newIndex;
+    init(indexSong);
+    playPause();
+}
+
+randomIcon.addEventListener("click", clickRandom);
+function clickRandom() {
+    if(isRepeat) {
+        repeatIcon.classList.remove("active-icon");
+    }
+    if (isRandom) {
+        randomIcon.classList.remove("active-icon");
+        isRandom = false;
+    } else {
+        randomIcon.classList.add("active-icon");
+        isRandom = true;
+    }
 }
 
