@@ -139,6 +139,24 @@ const musicList = [
         name: "Kẹo bông gòn",
         linkMusic: "./assets/music/kẹo bông gòn.mp3",
         img: "./assets/img/keobonggon.jfif"
+    },
+    {
+        id: 20,
+        name: "Điều anh muốn",
+        linkMusic: "./assets/music/điều anh muốn.mp3",
+        img: "./assets/img/dieuanhmuon.jpg"
+    },
+    {
+        id: 21,
+        name: "Kỳ vọng sai lầm",
+        linkMusic: "./assets/music/kỳ vọng sai lầm.mp3",
+        img: "./assets/img/kyvongsailam.jpg"
+    },
+    {
+        id: 22,
+        name: "Làm người yêu em nhé baby",
+        linkMusic: "./assets/music/làm người yêu em nhé.mp3",
+        img: "./assets/img/yeuminhemduockhong.jpg"
     }
 
 ];
