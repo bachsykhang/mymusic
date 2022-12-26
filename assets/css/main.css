@@ -266,3 +266,18 @@ video {
   gap: 0 26px;
 }
 }
+
+/* animation tuyết rơi */
+@keyframes move {
+  0%{
+    opacity: 0;
+    transform: translateY(0);
+  }10%{
+    opacity: 1;
+  }90%{
+    opacity: 1;
+  }100%{
+    opacity: 0;
+    transform: translateY(50vh);
+  }
+}
