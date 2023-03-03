@@ -157,6 +157,12 @@ const musicList = [
         name: "Làm người yêu em nhé baby",
         linkMusic: "./assets/music/làm người yêu em nhé.mp3",
         img: "./assets/img/yeuminhemduockhong.jpg"
+    },
+    {
+        id: 23,
+        name: "Mix music tiktok",
+        linkMusic: "./assets/music/mix music tiktok.mp3",
+        img: "./assets/img/tiktok.jfif"
     }
 
 ];
